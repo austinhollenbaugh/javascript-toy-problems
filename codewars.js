@@ -1,3 +1,17 @@
+// Program an algorithm in your selected language that performs exactly 1 complete pass (no more, no less :D) of the Bubblesort algorithm to a list of positive integers. You may assume all arguments provided are arrays containing at least 2 positive integers.
+function bubblesortOnce(intArr) {
+  for (var i = 0; i < intArr.length; i++) {
+    if (intArr[i] > intArr[i + 1]) {
+      var first = intArr[i];
+      intArr[i] = intArr[i + 1];
+      intArr[i + 1] = first;
+    }
+    console.log(intArr);
+  }
+
+  return intArr;
+}
+
 // https://www.codewars.com/kata/grasshopper-personalized-message/javascript
 // Personalized greeting
 //

@@ -1,3 +1,41 @@
+//Dan likes to find the nth power of number. But he doesn't like it when the result is odd!
+
+// Return the nth power of each number, unless the result is odd, in which case round the result to the nearest 10.
+//
+// Eg. if number = 7, and power = 2, result = 50.
+
+//https://www.codewars.com/kata/dans-great-power-generator/train/javascript
+
+function danspower(num, power) {
+  var result = 1;
+  if (power === 0) return 0;
+  for (var i = 1; i <= power; i++) {
+   result *= num;
+  }
+  if (result % 2 != 0) {
+    result = Math.round(result / 10) * 10;
+    return result;
+  }
+  return result;
+}
+
+//Make a program that filters a list of strings and returns a list with only your friends name in it.
+//
+// If a name has 4 letters in it, you can be sure that it has to be a friend of yours!
+//
+// Ex: Input = ["Ryan", "Kieran", "Jason", "Yous"], Output = ["Ryan", "Yous"]
+//https://www.codewars.com/kata/friend-or-foe/train/javascript
+
+function friend(friends){
+  var arr = [];
+  friends.filter(function(friend) {
+    if (friend.length === 4) {
+      arr.push(friend);
+    }
+  });
+  return arr;
+}
+
 //An Ironman Triathlon is one of a series of long-distance triathlon races organized by the World Triathlon Corporaion (WTC). It consists of a 2.4-mile swim, a 112-mile bicycle ride and a marathon (26.2-mile) (run, raced in that order and without a break. It hurts... trust me.
 
 // Your task is to take a distance that an athlete is through the race, and return one of the following:
@@ -15,6 +53,7 @@
 // Finally, if the athlete has completed te distance, return "You're done! Stop running!"
 //
 // All distance should be calculated to two decimal places.
+//https://www.codewars.com/kata/ironman-triathlon/train/javascript
 
 function iTri(s) {
   var distanceLeft = (140.60 - s).toFixed(2);

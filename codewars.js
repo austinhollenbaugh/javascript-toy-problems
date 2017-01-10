@@ -1,3 +1,47 @@
+// https://www.codewars.com/kata/currying-functions-multiply-all-elements-in-an-array/train/javascript
+
+// To complete this Kata you need to make a function multiplyAll which takes an array of integers as an argument. This function must return another function, which takes a single integer as an argument and returns a new array.
+//
+// The returned array should consist of each of the elements from the first array multiplied by the integer.
+//
+// Example:
+//
+// multiplyAll([1, 2, 3])(2) = [2, 4, 6];
+
+const multiplyAll = (arr) => {
+  return (int) => {
+    let multArr = [];
+    for (var i = 0; i < arr.length; i++) {
+      multArr.push(arr[i] * int);
+    }
+    return multArr;
+  }
+}
+
+//https://www.codewars.com/kata/sum-of-a-sequence/train/javascript
+
+// Your task is to make function, which returns the sum of a sequence of integers.
+//
+// The sequence is defined by 3 non-negative values: begin, end, step.
+//
+// If begin value is greater than the end, function should returns 0
+//
+// Examples
+//
+// sequenceSum(2,2,2) === 2
+// sequenceSum(2,6,2) === 12 // 2 + 4 + 6
+// sequenceSum(1,5,1) === 15 // 1 + 2 + 3 + 4 + 5
+// sequenceSum(1,5,3) === 5 // 1 + 4
+
+const sequenceSum = (begin, end, step) => {
+  let count = 0;
+  if (begin > end) return 0;
+  for (var i = begin; i <= end; i += step) {
+    count += i;
+  }
+  return count;
+};
+
 //https://www.codewars.com/kata/holiday-v-seasick-snorkelling/train/javascript
 
 // Thanks to the effects of El Nino this year my holiday snorkelling trip was akin to being in a washing machine... Not fun at all.
